@@ -9,6 +9,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // Scroll lock when mobile menu is open
@@ -59,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
     <header 
       className={`fixed top-0 w-full z-[9999] transition-all duration-500 ${
         scrolled 
-          ? 'bg-charcoal-900/95 backdrop-blur-md shadow-lg py-3 border-b border-ember/20' 
+          ? 'bg-charcoal-900/95 backdrop-blur-sm md:backdrop-blur-md shadow-lg py-3 border-b border-ember/20' 
           : 'bg-transparent py-6'
       }`}
     >
@@ -111,11 +122,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            initial={isMobile ? { opacity: 0 } : { opacity: 0, x: '100%' }}
+            animate={isMobile ? { opacity: 1 } : { opacity: 1, x: 0 }}
+            exit={isMobile ? { opacity: 0 } : { opacity: 0, x: '100%' }}
+            transition={isMobile 
+              ? { duration: 0.2, ease: 'easeOut' }
+              : { type: "spring", damping: 25, stiffness: 200 }
+            }
             className="fixed top-0 left-0 w-full h-screen bg-charcoal-900 z-[9999] flex flex-col items-center justify-center md:hidden"
+            style={isMobile ? { willChange: 'opacity' } : { willChange: 'transform, opacity' }}
           >
             <button 
               className="absolute top-6 right-6 text-parchment/50 hover:text-ember transition-colors"
