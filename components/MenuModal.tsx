@@ -78,7 +78,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-charcoal-900/90 backdrop-blur-sm z-[60]"
+            className="fixed top-0 left-0 w-full h-screen bg-charcoal-900/90 backdrop-blur-sm z-[9998]"
           />
 
           {/* Modal Content */}
@@ -87,7 +87,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-4 md:inset-10 z-[70] bg-charcoal-800 border border-white/10 rounded-sm shadow-2xl overflow-hidden flex flex-col max-w-5xl mx-auto"
+            className="fixed inset-4 md:inset-10 z-[9999] bg-charcoal-800 border border-white/10 rounded-sm shadow-2xl overflow-hidden flex flex-col max-w-5xl mx-auto"
           >
             {/* Texture Overlay */}
             <div className="absolute inset-0 pointer-events-none opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]"></div>

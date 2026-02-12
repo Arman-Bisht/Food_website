@@ -18,6 +18,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll lock when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const handleNavClick = (href: string, e: React.MouseEvent) => {
     if (href === '#menu') {
       e.preventDefault();
@@ -45,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
 
   return (
     <header 
-      className={`fixed top-0 w-full z-40 transition-all duration-500 ${
+      className={`fixed top-0 w-full z-[9999] transition-all duration-500 ${
         scrolled 
           ? 'bg-charcoal-900/95 backdrop-blur-md shadow-lg py-3 border-b border-ember/20' 
           : 'bg-transparent py-6'
@@ -103,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-charcoal-900 z-50 flex flex-col items-center justify-center md:hidden"
+            className="fixed top-0 left-0 w-full h-screen bg-charcoal-900 z-[9999] flex flex-col items-center justify-center md:hidden"
           >
             <button 
               className="absolute top-6 right-6 text-parchment/50 hover:text-ember transition-colors"
