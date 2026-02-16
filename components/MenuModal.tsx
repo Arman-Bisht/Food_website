@@ -108,6 +108,15 @@ export const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
 
             {/* Scrollable Body */}
             <div className="relative z-10 flex-1 overflow-y-auto p-6 md:p-10 custom-scrollbar">
+              {/* Featured Menu Image */}
+              <div className="mb-12 -mx-6 md:-mx-10 -mt-6 md:-mt-10">
+                <img 
+                  src="/oklahoma_smoke_Grill2.jpg" 
+                  alt="Oklahoma Smoke Grill Menu" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {fullMenu.map((category, idx) => (
                   <div key={idx} className="space-y-6">
