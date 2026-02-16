@@ -160,7 +160,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
             
             {/* Call to Action Footer inside Modal */}
              <div className="relative z-10 p-4 bg-charcoal-900/80 border-t border-white/5 flex flex-col justify-center items-center md:hidden gap-2">
-                <a href="tel:4056737218" className="bg-ember text-white px-8 py-3 rounded-sm font-bold uppercase tracking-widest w-full text-center shadow-lg flex items-center justify-center gap-2">
+                <a href="tel:+14056737218" className="bg-ember text-white px-8 py-3 rounded-sm font-bold uppercase tracking-widest w-full text-center shadow-lg flex items-center justify-center gap-2">
                   <Phone className="w-4 h-4" />
                   Call to Order
                 </a>

@@ -26,7 +26,7 @@ export const StickyMobileFooter: React.FC = () => {
           <div className="flex flex-col gap-2">
             <div className="flex gap-3">
               <a 
-                href="tel:4056737218"
+                href="tel:+14056737218"
                 className="flex-1 bg-ember text-white py-3 rounded-sm font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2 active:bg-ember-dark shadow-lg"
               >
                 <Phone size={18} />

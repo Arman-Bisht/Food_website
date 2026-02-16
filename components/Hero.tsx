@@ -69,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu }) => {
               View Menu
             </button>
             <a 
-              href="tel:4056737218"
+              href="tel:+14056737218"
               className="px-8 py-4 bg-ember hover:bg-ember-light text-white font-bold text-lg rounded-sm uppercase tracking-widest transition-all hover:scale-105 shadow-[0_0_20px_rgba(204,85,0,0.4)] flex items-center justify-center gap-2 min-w-[200px]"
             >
               <Phone className="w-5 h-5" />
