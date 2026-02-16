@@ -15,11 +15,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu }) => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{ 
             backgroundImage: "url('/unnamed.webp')",
-            filter: "brightness(0.5) contrast(1.1)" 
+            filter: "brightness(0.6) contrast(1.1)" 
           }}
         />
-        <div className="absolute inset-0 bg-charcoal-900/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/40 to-transparent" />
+        <div className="absolute inset-0 bg-charcoal-900/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/60 via-transparent to-transparent" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 text-center">
