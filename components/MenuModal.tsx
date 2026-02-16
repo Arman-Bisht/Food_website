@@ -111,7 +111,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({ isOpen, onClose }) => {
               {/* Featured Menu Image */}
               <div className="mb-12 -mx-6 md:-mx-10 -mt-6 md:-mt-10">
                 <img 
-                  src="/oklahoma_smoke_Grill2.jpg" 
+                  src="/oklahoma_smoke_Grill2.O.jpg" 
                   alt="Oklahoma Smoke Grill Menu" 
                   className="w-full h-auto object-cover"
                 />
