@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
           <img 
             src="/Oklahoma_Smoke_grill1-removebg-preview.png" 
             alt="Oklahoma Smoke Grill Logo" 
-            className="h-12 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105"
           />
         </a>
 
