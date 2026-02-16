@@ -75,12 +75,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="#" className="flex items-center gap-3 group">
           <img 
             src="/Oklahoma_Smoke_grill1-removebg-preview.png" 
             alt="Oklahoma Smoke Grill Logo" 
             className="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105"
           />
+          <span className="font-western text-xl md:text-2xl text-parchment tracking-wider leading-none group-hover:text-ember transition-colors">
+            OKC Smoke
+          </span>
         </a>
 
         {/* Desktop Nav */}
